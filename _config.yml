@@ -1,0 +1,21 @@
+# GitHub Pages configuration for EduPortal
+title: EduPortal - School Management System
+description: A comprehensive school management system for students, teachers, parents, and administrators
+url: "https://yourusername.github.io"
+baseurl: "/school-website"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+
+# Enable GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
