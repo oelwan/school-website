@@ -1,6 +1,6 @@
-# EduPortal - School Management System
+# AL FURSAN - School Management System
 
-A comprehensive school management system built with HTML, CSS, and JavaScript. EduPortal provides separate dashboards for students, teachers, parents, and administrators to manage academic activities, track progress, and facilitate communication.
+A comprehensive school management system built with HTML, CSS, and JavaScript. AL FURSAN School provides separate dashboards for students, teachers, parents, and administrators to manage academic activities, track progress, and facilitate communication.
 
 ## 🌟 Features
 
@@ -34,29 +34,16 @@ A comprehensive school management system built with HTML, CSS, and JavaScript. E
 
 ## 🚀 Live Demo
 
-Visit the live demo: [EduPortal Demo](https://your-github-username.github.io/school-website/)
+Visit the live demo: [AL FURSAN School](https://oelwan.github.io/school-website/)
 
-## 🔐 Demo Credentials
+## 🔐 Admin Access
 
-### Student Account
-- **Email**: `john.student@school.edu`
-- **Password**: `student123`
-- **Type**: Student
-
-### Teacher Account
-- **Email**: `sarah.teacher@school.edu`
-- **Password**: `teacher123`
-- **Type**: Teacher
-
-### Parent Account
-- **Email**: `robert.parent@email.com`
-- **Password**: `parent123`
-- **Type**: Parent
-
-### Admin Account
-- **Email**: `admin@school.edu`
+### Administrator Account (Only login available)
+- **Email**: `admin@alfursan.edu`
 - **Password**: `admin123`
 - **Type**: Administrator
+
+**Note**: Public registration has been disabled. Only administrators can create user accounts for students, teachers, and parents through the admin panel.
 
 ## 🛠️ Installation & Setup
 
@@ -111,13 +98,11 @@ school-website/
 
 The application uses **localStorage** for data persistence, making it perfect for GitHub Pages hosting. All user data, courses, assignments, and grades are stored locally in the browser.
 
-### Sample Data Included
-- **Students**: 2 sample students with grades and assignments
-- **Teachers**: 2 sample teachers with courses
-- **Parents**: 2 sample parents linked to students
-- **Courses**: 4 sample courses with enrollments
-- **Assignments**: Sample homework and exams
-- **Grades**: Sample grades for demonstration
+### Production Ready
+- **Clean Data Structure**: No demo data, ready for real school use
+- **Admin-Only User Creation**: Secure user management through admin panel
+- **Customized for AL FURSAN**: School branding and content
+- **Professional Setup**: Ready for actual school deployment
 
 ## 🎨 Design Features
 
@@ -213,6 +198,6 @@ If you encounter any issues:
 
 ---
 
-**Made with ❤️ for education**
+**Made with ❤️ for AL FURSAN School**
 
-*EduPortal - Connecting students, teachers, parents, and administrators in one comprehensive platform.*
+*AL FURSAN - Excellence in education through comprehensive school management.*

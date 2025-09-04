@@ -38,53 +38,28 @@ function initializeApp() {
     }
 }
 
-// Create sample data for demonstration
+// Create initial data structure for AL FURSAN School
 function createSampleData() {
-    // Sample users
+    // Only create admin user initially - all other users will be created by admin
     appData.users = [
-        // Students
-        { id: 1, name: 'John Smith', email: 'john.student@school.edu', password: 'student123', type: 'student', grade: '10', parentId: 5 },
-        { id: 2, name: 'Emma Johnson', email: 'emma.student@school.edu', password: 'student123', type: 'student', grade: '11', parentId: 6 },
-        
-        // Teachers
-        { id: 3, name: 'Dr. Sarah Wilson', email: 'sarah.teacher@school.edu', password: 'teacher123', type: 'teacher', subject: 'Mathematics' },
-        { id: 4, name: 'Mr. Michael Brown', email: 'michael.teacher@school.edu', password: 'teacher123', type: 'teacher', subject: 'Science' },
-        
-        // Parents
-        { id: 5, name: 'Robert Smith', email: 'robert.parent@email.com', password: 'parent123', type: 'parent', children: [1] },
-        { id: 6, name: 'Linda Johnson', email: 'linda.parent@email.com', password: 'parent123', type: 'parent', children: [2] },
-        
-        // Admin
-        { id: 7, name: 'Administrator', email: 'admin@school.edu', password: 'admin123', type: 'admin' }
+        // Admin account
+        { id: 1, name: 'Administrator', email: 'admin@alfursan.edu', password: 'admin123', type: 'admin' }
     ];
 
-    // Sample courses
-    appData.courses = [
-        { id: 1, name: 'Advanced Mathematics', teacher: 'Dr. Sarah Wilson', teacherId: 3, grade: '10', students: [1] },
-        { id: 2, name: 'Physics', teacher: 'Mr. Michael Brown', teacherId: 4, grade: '10', students: [1] },
-        { id: 3, name: 'Calculus', teacher: 'Dr. Sarah Wilson', teacherId: 3, grade: '11', students: [2] },
-        { id: 4, name: 'Chemistry', teacher: 'Mr. Michael Brown', teacherId: 4, grade: '11', students: [2] }
-    ];
+    // Empty arrays for production data - to be populated by admin
+    appData.courses = [];
+    appData.assignments = [];
+    appData.grades = [];
 
-    // Sample assignments
-    appData.assignments = [
-        { id: 1, courseId: 1, title: 'Algebra Quiz', type: 'exam', dueDate: '2024-01-15', description: 'Chapter 5 quiz on quadratic equations' },
-        { id: 2, courseId: 1, title: 'Homework Set 12', type: 'homework', dueDate: '2024-01-10', description: 'Problems 1-20 from textbook page 145' },
-        { id: 3, courseId: 2, title: 'Lab Report', type: 'homework', dueDate: '2024-01-12', description: 'Write a report on the pendulum experiment' }
-    ];
-
-    // Sample grades
-    appData.grades = [
-        { id: 1, studentId: 1, courseId: 1, assignmentId: 1, grade: 85, maxGrade: 100 },
-        { id: 2, studentId: 1, courseId: 1, assignmentId: 2, grade: 92, maxGrade: 100 },
-        { id: 3, studentId: 1, courseId: 2, assignmentId: 3, grade: 88, maxGrade: 100 }
-    ];
-
-    // Sample news
+    // Welcome message for AL FURSAN School
     appData.news = [
-        { id: 1, title: 'Welcome Back to School!', content: 'We hope everyone had a great winter break. Classes resume on Monday, January 8th.', date: '2024-01-05', author: 'Administration' },
-        { id: 2, title: 'Parent-Teacher Conferences', content: 'Parent-teacher conferences will be held on January 20th from 2:00 PM to 6:00 PM.', date: '2024-01-03', author: 'Administration' },
-        { id: 3, title: 'Science Fair Registration', content: 'Students interested in participating in the annual science fair should register by January 15th.', date: '2024-01-02', author: 'Science Department' }
+        { 
+            id: 1, 
+            title: 'Welcome to AL FURSAN School Management System', 
+            content: 'Our new digital platform is now live! This system will help students, teachers, and parents stay connected and track academic progress efficiently.', 
+            date: new Date().toISOString().split('T')[0], 
+            author: 'AL FURSAN Administration' 
+        }
     ];
 }
 
@@ -106,8 +81,6 @@ function setupEventListeners() {
     // Login form
     document.getElementById('loginForm').addEventListener('submit', handleLogin);
     
-    // Register form
-    document.getElementById('registerForm').addEventListener('submit', handleRegister);
     
     // Mobile menu toggle
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -181,37 +154,6 @@ function handleLogin(e) {
     }
 }
 
-// Handle registration
-function handleRegister(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('registerName').value;
-    const email = document.getElementById('registerEmail').value;
-    const password = document.getElementById('registerPassword').value;
-    const userType = document.getElementById('registerUserType').value;
-    
-    // Check if user already exists
-    const existingUser = appData.users.find(u => u.email === email);
-    if (existingUser) {
-        alert('User with this email already exists.');
-        return;
-    }
-    
-    // Create new user
-    const newUser = {
-        id: appData.users.length + 1,
-        name: name,
-        email: email,
-        password: password,
-        type: userType
-    };
-    
-    appData.users.push(newUser);
-    saveAppData();
-    
-    alert('Registration successful! You can now log in.');
-    closeModal('registerModal');
-}
 
 // Redirect to appropriate dashboard
 function redirectToDashboard() {
@@ -238,9 +180,6 @@ function showLoginModal() {
     document.getElementById('loginModal').style.display = 'block';
 }
 
-function showRegisterModal() {
-    document.getElementById('registerModal').style.display = 'block';
-}
 
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = 'none';

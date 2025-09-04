@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduPortal - School Management System</title>
+    <title>AL FURSAN - School Management System</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,15 +13,14 @@
         <div class="container">
             <div class="nav-brand">
                 <i class="fas fa-graduation-cap"></i>
-                <h1>EduPortal</h1>
+                <h1>AL FURSAN</h1>
             </div>
             <nav class="nav-menu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 <div class="auth-buttons">
-                    <button class="btn btn-outline" onclick="showLoginModal()">Login</button>
-                    <button class="btn btn-primary" onclick="showRegisterModal()">Register</button>
+                    <button class="btn btn-primary" onclick="showLoginModal()">Login</button>
                 </div>
             </nav>
             <div class="mobile-menu-toggle">
@@ -35,8 +34,8 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2>Welcome to EduPortal</h2>
-                    <p>Your comprehensive school management system for students, teachers, parents, and administrators.</p>
+                    <h2>Welcome to AL FURSAN School</h2>
+                    <p>Excellence in education through comprehensive school management and academic tracking.</p>
                     <div class="hero-buttons">
                         <button class="btn btn-primary btn-large" onclick="showLoginModal()">Get Started</button>
                         <button class="btn btn-outline btn-large" onclick="scrollToSection('about')">Learn More</button>
@@ -90,9 +89,9 @@
         <!-- About Section -->
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title">About EduPortal</h2>
+                <h2 class="section-title">About AL FURSAN School</h2>
                 <div class="about-content">
-                    <p>EduPortal is a comprehensive school management system designed to streamline communication and academic tracking between students, teachers, parents, and administrators. Our platform provides a centralized hub for all educational activities.</p>
+                    <p>AL FURSAN School is committed to providing excellence in education through innovative teaching methods and comprehensive academic management. Our digital platform connects students, teachers, parents, and administrators to ensure the best educational experience for every student.</p>
                 </div>
             </div>
         </section>
@@ -103,7 +102,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <i class="fas fa-graduation-cap"></i>
-                    <span>EduPortal</span>
+                    <span>AL FURSAN</span>
                 </div>
                 <div class="footer-links">
                     <a href="#privacy">Privacy Policy</a>
@@ -112,7 +111,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 EduPortal. All rights reserved.</p>
+                <p>&copy; 2024 AL FURSAN School. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -121,7 +120,7 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Login to EduPortal</h3>
+                <h3>Login to AL FURSAN</h3>
                 <span class="close" onclick="closeModal('loginModal')">&times;</span>
             </div>
             <div class="modal-body">
@@ -150,41 +149,6 @@
         </div>
     </div>
 
-    <!-- Register Modal -->
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Register for EduPortal</h3>
-                <span class="close" onclick="closeModal('registerModal')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="registerForm">
-                    <div class="form-group">
-                        <label for="registerName">Full Name</label>
-                        <input type="text" id="registerName" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registerEmail">Email</label>
-                        <input type="email" id="registerEmail" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registerPassword">Password</label>
-                        <input type="password" id="registerPassword" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registerUserType">Register as:</label>
-                        <select id="registerUserType" name="userType" required>
-                            <option value="">Select user type</option>
-                            <option value="student">Student</option>
-                            <option value="teacher">Teacher</option>
-                            <option value="parent">Parent</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Register</button>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <script src="js/main.js"></script>
 </body>
