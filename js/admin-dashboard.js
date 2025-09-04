@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadAdminData();
     setupNavigation();
     setupForms();
+    setupMobileMenu();
 });
 
 let adminData = {
@@ -619,6 +620,47 @@ function closeModal(modalId) {
 function logout() {
     localStorage.removeItem('currentUser');
     window.location.href = 'index.html';
+}
+
+// Setup mobile menu functionality
+function setupMobileMenu() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('mobile-active');
+            const icon = mobileToggle.querySelector('i');
+            if (navMenu.classList.contains('mobile-active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on nav links
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('mobile-active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!navMenu.contains(event.target) && !mobileToggle.contains(event.target)) {
+                navMenu.classList.remove('mobile-active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
 }
 
 // Initialize with dashboard view
